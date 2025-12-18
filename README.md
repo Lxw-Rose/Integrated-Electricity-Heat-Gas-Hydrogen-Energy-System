@@ -77,5 +77,4 @@
 
 ## 参考文献
 
-[1] Resource scheduling and capacity allocation optimization of an integrated electricity–heat–gas–hydrogen energy system,  
-*Energy*, 2025.
+[1] Wang J, Liu H, Xu C. Resource scheduling and capacity allocation optimization of an integrated electricity-heat-gas-hydrogen energy system[J]. Energy, 2025: 138683.
