@@ -49,19 +49,19 @@
 模型求解后可得到以下典型结果图：
 
 ### 电能量平衡
-![Electricity balance](figures/elec_balance.png)
+![Electricity balance](./elec_balance.png)
 
 ### 天然气能量平衡
-![Gas balance](figures/gas_balance.png)
+![Gas balance](./gas_balance.png)
 
 ### 氢能量平衡
-![Hydrogen balance](figures/hydrogen_balance.png)
+![Hydrogen balance](./hydrogen_balance.png)
 
 ### 热能量平衡
-![Heat balance](figures/heat_balance.png)
+![Heat balance](./heat_balance.png)
 
 ### 弃电惩罚系数灵敏度分析
-![Curtailment sensitivity](figures/curtailment_sensitivity.png)
+![Curtailment sensitivity](./curtailment_sensitivity.png)
 
 相关结果图像在运行代码后自动生成并保存在项目目录中。
 
