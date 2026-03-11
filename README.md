@@ -77,7 +77,7 @@ S_n(1) = S_n(T)
 
 | 本项目复现结果 | 原论文结果 |
 |---|---|
-| ![](pic/electric_balance.png) | ![](pic/org_electric_balance.png) |
+| ![](pic/elec_balance.png) | ![](pic/org_elec_balance.png) |
 
 ---
 
@@ -122,15 +122,6 @@ S_n(1) = S_n(T)
 ---
 
 ## 运行环境
-
-建议使用以下环境：
-
-```
-Python >= 3.9
-gurobipy >= 10.0
-numpy
-pandas
-matplotlib
 ```
 
 如果尚未安装 Gurobi，请先完成 Gurobi 及许可证配置。
