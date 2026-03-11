@@ -1,0 +1,57 @@
+\ Model Integrated_Energy_System_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+\ Signature: 0xc5ca3ab32e76af7a
+Minimize
+ 
+Subject To
+ GT_e2h_22: - 1.571428571428572 PGT_e[22] + PGT_h[22] = 0
+ WHB_recover_22: - 0.75 PGT_h[22] + PWHB_h[22] = 0
+ HFC_e_22: - 0.031632 HHFC[22] + PHFC_e[22] = 0
+ HFC_h_22: - 0.005931 HHFC[22] + PHFC_h[22] = 0
+ ES1_mutex_22: bcha_ES1[22] + bdis_ES1[22] <= 1
+ ES1_cha_cap_22: Pcha_ES1[22] - 60 bcha_ES1[22] <= 0
+ ES1_dis_cap_22: Pdis_ES1[22] - 60 bdis_ES1[22] <= 0
+ ES1_init_SOC0: SOC_ES1[0] = 0
+ ES2_init_SOC0: SOC_ES2[0] = 0
+ ES1_SOC_dyn_22: - 0.95 Pcha_ES1[22] + 1.052631578947368 Pdis_ES1[22]
+   - 0.999 SOC_ES1[22] + SOC_ES1[23] = 0
+ ES2_SOC_dyn_22: - 0.95 Pcha_ES2[22] + 1.052631578947368 Pdis_ES2[22]
+   - SOC_ES2[22] + SOC_ES2[23] = 0
+ ES1_SOC_min_22: SOC_ES1[22] >= 40
+ ES2_SOC_min_22: SOC_ES2[22] >= 40
+ ES1_cycle: - SOC_ES1[0] + SOC_ES1[23] = 0
+ ES2_cycle: - SOC_ES2[0] + SOC_ES2[23] = 0
+ EGT_actual_22: - 0.195 PGT_e[22] - 0.39 PGT_h[22] + EGT_a[22] = 0
+ EGB_actual_22: - 0.195 PGB_h[22] + EGB_a[22] = 0
+ ECO2_total_22: ECO2[22] - EGT_a[22] - EGB_a[22] = 0
+ CCS_capture_22: - 0.65 ECO2[22] + Ecap_CCS[22] = 0
+ CCS_power_22: - 0.269 Ecap_CCS[22] + PCCS[22] = 0
+ Balance_Elec_22: Pbuy_e[22] + PWT[22] + PPV[22] + PGT_e[22] - PEL_e[22]
+   + PHFC_e[22] - PCCS[22] - Pcha_ES1[22] + Pdis_ES1[22] = 30
+ Balance_Heat_22: Pbuy_h[22] + PGB_h[22] + PWHB_h[22] + PHFC_h[22]
+   - Pcha_ES2[22] + Pdis_ES2[22] = 63
+Bounds
+ PGT_h[22] free
+ PGB_h[22] free
+ PWHB_h[22] free
+ -infinity <= PEL_e[22] <= 5
+ PHFC_e[22] free
+ PHFC_h[22] free
+ ECO2[22] free
+ Ecap_CCS[22] free
+ PCCS[22] free
+ EGT_a[22] free
+ EGB_a[22] free
+ Pcha_ES1[22] free
+ Pdis_ES1[22] free
+ -infinity <= Pcha_ES2[22] <= 60
+ Pdis_ES2[22] free
+ SOC_ES1[0] free
+ SOC_ES1[22] free
+ SOC_ES1[23] free
+ SOC_ES2[0] free
+ SOC_ES2[22] free
+ SOC_ES2[23] free
+Binaries
+ bcha_ES1[22] bdis_ES1[22]
+End
